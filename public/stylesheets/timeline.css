@@ -1,0 +1,134 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito', sans-serif;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    background-color: #f3f3f3;
+}
+
+#background {
+    height: 100%;
+    width: 100%;
+}
+
+nav {
+    width: 100%;
+    height: 12%;
+    display: flex;
+    padding: 0px 50px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#links {
+    height: 50%;
+    width: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-left: -20px;
+}
+
+#dp {
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    background-color: rgba(219, 219, 219, 0.562);
+}
+
+#logo {
+    font-family: 'Lobster', cursive;
+    font-size: 35px;
+}
+
+#links span i {
+    font-size: 22px;
+}
+
+#dp img {
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+}
+
+#postcontainer {
+    width: 70%;
+    margin: 0 auto;
+    min-height: 88%;
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.posts {
+    height: 500px;
+    width: 46%;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 25px;
+}
+
+.postuser {
+    height: 50px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.postimg {
+    margin-top: 5px;
+    height: 330px;
+    display: flex;
+    justify-content: center;
+}
+
+.postcap {
+    min-height: 70px;
+    width: 100%;
+    padding: 5px 10px;
+}
+
+.details {
+    width: 30%;
+    height: 100%;
+    margin-right: 0px;
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 5px 20px;
+}
+
+.postuser .userimg {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(219, 219, 219, 0.562);
+    margin-right: 20px;
+    margin-left: 10px;
+}
+
+.postuser img {
+    width: 40px;
+    border-radius: 50%;
+}
+
+.postimg img {
+    height: 100%;
+}
+
+.details i {
+    font-size: 22px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}

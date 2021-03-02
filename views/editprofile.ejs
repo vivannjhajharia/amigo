@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Profile</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="/images/Free_Sample_By_Wix-removebg-preview.png">
+    <link rel="stylesheet" href="/stylesheets/edit.css">
+</head>
+
+<body>
+    <div id="background">
+        <nav>
+            <a href="/timeline">
+                <div id="logo">Amigo</div>
+            </a>
+            <div id="links">
+                <a href="/timeline">
+                    <span><i class="ri-home-line"></i></span>
+                </a>
+                <a href="/postnow">
+                    <span><i class="ri-add-circle-line"></i></span>
+                </a>
+                <a href="/search">
+                    <span><i class="ri-search-line"></i></span>
+                </a>
+                <a href="/chat">
+                    <span><i class="ri-chat-1-line"></i></span>
+                </a>
+            </div>
+            <a href="/profile">
+                <div id="dp">
+                    <img src="<%=founduser.dp%>"
+                        alt="Image error">
+                </div>
+            </a>
+        </nav>
+        <img id="dpimg"
+            src="<%=founduser.dp%>"
+            alt="Image error">
+        <div id="container">
+            <form action="/uploadpic" method="POST" enctype="multipart/form-data">
+                <label for="file" id="fileclick">Change Profile Picture</label>
+                <input type="file" id="file" name="dp">
+                <input id="picsubmit" type="submit">
+                <br>
+            </form>
+            <form action="/update" method="POST">
+                <input type="text" placeholder="Enter Your Bio" name="bio" value="<%=founduser.bio%>">
+                <br>
+                <input type="submit" value="Submit">
+            </form>
+            <a href="/profile">
+                <button>Back To Profile</button>
+            </a>
+        </div>
+        <script>
+            let fileclick = document.querySelector('#fileclick');
+            let file = document.querySelector('#file');
+            file.onchange = function() {
+                document.querySelector('#picsubmit').click();
+            }
+        </script>
+</body>
+
+</html>

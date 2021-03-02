@@ -1,0 +1,154 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito', sans-serif;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    background-color: #f3f3f3;
+}
+
+#background {
+    height: 100%;
+    width: 100%;
+}
+
+nav {
+    width: 100%;
+    height: 12%;
+    display: flex;
+    padding: 0px 50px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#links {
+    height: 50%;
+    width: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-left: -20px;
+}
+
+#dp {
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    border: black 2px solid;
+    padding: 5px;
+    /* border-image: linear-gradient(90deg,black,darkgray,gray);
+    border-image-slice: 1; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#logo {
+    font-family: 'Lobster', cursive;
+    font-size: 35px;
+}
+
+#links span i {
+    font-size: 22px;
+}
+
+#dp img {
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+#dpinner {
+    height: 45px;
+    width: 50px;
+    background-color: rgba(219, 219, 219, 0.562);
+    border-radius: 50%;
+}
+
+#dpimg {
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    top: 20%;
+    transform: translate(-50%,0);
+}
+
+#container {
+    width: 60%;
+    min-height: 70%;
+    background-color: rgb(223, 221, 221);
+    margin: 10% auto;
+    border-radius: 10px;
+    padding-top: 120px;
+    text-align: center;
+}
+
+h5 {
+   font-weight: 400;
+   font-size: 14px;
+}
+
+.btn {
+    width: 100px;
+    height: 40px;
+    border: none;
+    background-color: #2980b9;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0 10px;
+    letter-spacing: 1px;
+    font-weight: 500;
+}
+
+#two {
+    background-color: #16a085;
+}
+
+#three {
+    background-color: #34495e;
+}
+
+#postcontainer {
+    width: 100%;
+    margin: 0 auto;
+    min-height: 88%;
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.posts {
+    min-height: 350px;
+    width: 46%;
+    margin: 0 15px;
+    margin-top: 25px;
+}
+
+.postimg {
+    margin-top: 5px;
+    height: 330px;
+    overflow: hidden;
+}
+
+.postimg img {
+    height: 100%;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 20px;
+}

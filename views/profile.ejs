@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="/stylesheets/profile.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="/images/Free_Sample_By_Wix-removebg-preview.png">
+</head>
+
+<body>
+    <div id="background">
+        <nav>
+            <a href="/timeline">
+                <div id="logo">Amigo</div>
+            </a>
+            <div id="links">
+                <a href="/timeline">
+                    <span><i class="ri-home-line"></i></span>
+                </a>
+                <a href="/postnow">
+                    <span><i class="ri-add-circle-line"></i></span>
+                </a>
+                <a href="/search">
+                    <span><i class="ri-search-line"></i></span>
+                </a>
+                <a href="/chat">
+                    <span><i class="ri-chat-1-line"></i></span>
+                </a>
+            </div>
+            <div id="dp">
+                <div id="dpinner">
+                    <img src="https://images.unsplash.com/photo-1612214095397-d5f16300485b?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                        alt="Image error">
+                </div>
+            </div>
+        </nav>
+        <img id="dpimg" src="https://images.unsplash.com/photo-1612214095397-d5f16300485b?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+            alt="Image error">
+        <div id="container">
+            <h2><%=founduser.username%></h2>
+            <br>
+            <h5><%=founduser.bio%></h5>
+            <br>
+            <a href="/postnow">
+                <button id="one" class="btn">Post Now</button>
+            </a>
+            <a href="/editprofile">
+                <button id="two" class="btn">Edit Profile</button>
+            </a>
+            <a href="/logout">
+                <button id="three" class="btn">Log Out</button>
+            </a>
+            <h1>Posts</h1>
+            <div id="postcontainer">
+                <div class="posts">
+                    <div class="postimg">
+                        <img src="https://images.unsplash.com/photo-1612817122234-8b4bb9ad7b7c?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"
+                            alt="Image error">
+                    </div>
+                </div>
+                <div class="posts">
+                    <div class="postimg">
+                        <img src="https://images.unsplash.com/photo-1611522377978-a2f38e639a41?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1001&q=80"
+                            alt="Image error">
+                    </div>
+                </div>
+                <div class="posts">
+                    <div class="postimg">
+                        <img src="https://images.unsplash.com/photo-1611522377978-a2f38e639a41?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1001&q=80"
+                            alt="Image error">
+                    </div>
+                </div>
+                <div class="posts">
+                    <div class="postimg">
+                        <img src="https://images.unsplash.com/photo-1611522377978-a2f38e639a41?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1001&q=80"
+                            alt="Image error">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

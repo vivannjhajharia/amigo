@@ -1,0 +1,68 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito', sans-serif;
+    color: black;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+#background {
+    height: 100%;
+    width: 100%;
+    background-image: url('/images/nathan-dumlao-HKZPcz4Jpm8-unsplash.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+#background2 {
+    height: 100%;
+    width: 100%;
+    background-image: url('/images/boxed-water-is-better-jbcY_yvsDzk-unsplash.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+#form {
+    background-color: rgba(223, 222, 222, 0.623);
+    backdrop-filter: blur(5px);
+    padding: 50px;
+    border-radius: 10px;
+    width: 400px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#fp {
+    color: #6C321B;
+    font-weight: 600;
+}
+
+.nav {
+    position: absolute;
+    top: 0;
+    padding: 20px 30px;
+}
+
+.nav h1 {
+    font-family: 'Lobster', cursive;
+    font-size: 30px;
+    color: white;
+}
+
+.nav a {
+    text-decoration: none;
+}
+
+.nav a #loginheading {
+    color: #6C321B;
+}
