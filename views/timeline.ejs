@@ -34,97 +34,33 @@
             </div>
             <a href="/profile">
                 <div id="dp">
-                    <img src="https://freepikpsd.com/wp-content/uploads/2019/10/default-profile-image-png-1-Transparent-Images.png"
+                    <img src=""
                         alt="Image error">
                 </div>
             </a>
         </nav>
         <div id="postcontainer">
-            <div class="posts">
-                <div class="postuser">
-                    <div class="userimg">
-                        <img src="https://freepikpsd.com/wp-content/uploads/2019/10/default-profile-image-png-1-Transparent-Images.png"
+            <%allposts.reverse().forEach(function(post) {%>
+                <div class="posts">
+                    <div class="postuser">
+                        <div class="userimg">
+                            <img src=<%="/images/uploads/"+post.user.dp%>
+                                alt="Image error">
+                        </div>
+                        <span><%=post.user.username%></span>
+                    </div>
+                    <div class="postimg">
+                        <img src=<%="/images/"+post.image%>
                             alt="Image error">
                     </div>
-                    <span>username</span>
-                </div>
-                <div class="postimg">
-                    <img src="https://images.unsplash.com/photo-1612817122234-8b4bb9ad7b7c?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"
-                        alt="Image error">
-                </div>
-                <div class="postcap">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus vel sint laboriosam
-                        sapiente iusto, porro dolorum provident enim ipsa atque facere! Qui quam mollitia totam sit nisi
-                        fugiat perspiciatis molestias?</p>
-                    <div class="details">
-                        <span><i class="ri-heart-3-line"></i></span>
-                        <span><i class="ri-chat-4-line"></i></span>
+                    <div class="postcap">
+                        <p><%=post.caption%></p>
+                        <div class="details">
+                            <span><i class="ri-heart-3-line"></i></span>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="posts">
-                <div class="postuser">
-                    <div class="userimg">
-                        <img src="https://freepikpsd.com/wp-content/uploads/2019/10/default-profile-image-png-1-Transparent-Images.png"
-                            alt="Image error">
-                    </div>
-                    <span>username</span>
-                </div>
-                <div class="postimg">
-                    <img src="https://images.unsplash.com/photo-1611522377978-a2f38e639a41?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1001&q=80"
-                        alt="Image error">
-                </div>
-                <div class="postcap">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam dicta assumenda, dolores placeat
-                        molestias temporibus.</p>
-                    <div class="details">
-                        <span><i class="ri-heart-3-line"></i></span>
-                        <span><i class="ri-chat-4-line"></i></span>
-                    </div>
-                </div>
-            </div>
-            <div class="posts">
-                <div class="postuser">
-                    <div class="userimg">
-                        <img src="https://freepikpsd.com/wp-content/uploads/2019/10/default-profile-image-png-1-Transparent-Images.png"
-                            alt="Image error">
-                    </div>
-                    <span>username</span>
-                </div>
-                <div class="postimg">
-                    <img src="https://images.unsplash.com/photo-1611522377978-a2f38e639a41?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1001&q=80"
-                        alt="Image error">
-                </div>
-                <div class="postcap">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam dicta assumenda, dolores placeat
-                        molestias temporibus.</p>
-                    <div class="details">
-                        <span><i class="ri-heart-3-line"></i></span>
-                        <span><i class="ri-chat-4-line"></i></span>
-                    </div>
-                </div>
-            </div>
-            <div class="posts">
-                <div class="postuser">
-                    <div class="userimg">
-                        <img src="https://freepikpsd.com/wp-content/uploads/2019/10/default-profile-image-png-1-Transparent-Images.png"
-                            alt="Image error">
-                    </div>
-                    <span>username</span>
-                </div>
-                <div class="postimg">
-                    <img src="https://images.unsplash.com/photo-1611522377978-a2f38e639a41?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1001&q=80"
-                        alt="Image error">
-                </div>
-                <div class="postcap">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam dicta assumenda, dolores placeat
-                        molestias temporibus.</p>
-                    <div class="details">
-                        <span><i class="ri-heart-3-line"></i></span>
-                        <span><i class="ri-chat-4-line"></i></span>
-                    </div>
-                </div>
-            </div>
+            <%})%>
         </div>
     </div>
 </body>

@@ -36,13 +36,11 @@
             </div>
             <div id="dp">
                 <div id="dpinner">
-                    <img src="https://images.unsplash.com/photo-1612214095397-d5f16300485b?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
-                        alt="Image error">
+                    <img src="<%=founduser.dp%>" alt="Image error">
                 </div>
             </div>
         </nav>
-        <img id="dpimg" src="https://images.unsplash.com/photo-1612214095397-d5f16300485b?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
-            alt="Image error">
+        <img id="dpimg" src="<%=founduser.dp%>" alt="Image error">
         <div id="container">
             <h2><%=founduser.username%></h2>
             <br>
@@ -59,30 +57,14 @@
             </a>
             <h1>Posts</h1>
             <div id="postcontainer">
-                <div class="posts">
-                    <div class="postimg">
-                        <img src="https://images.unsplash.com/photo-1612817122234-8b4bb9ad7b7c?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"
-                            alt="Image error">
+                <%founduser.posts.reverse().forEach(function(post) {%>
+                    <div class="posts">
+                        <div class="postimg">
+                            <img src=<%="/images/"+post.image%>
+                                alt="Image error">
+                        </div>
                     </div>
-                </div>
-                <div class="posts">
-                    <div class="postimg">
-                        <img src="https://images.unsplash.com/photo-1611522377978-a2f38e639a41?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1001&q=80"
-                            alt="Image error">
-                    </div>
-                </div>
-                <div class="posts">
-                    <div class="postimg">
-                        <img src="https://images.unsplash.com/photo-1611522377978-a2f38e639a41?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1001&q=80"
-                            alt="Image error">
-                    </div>
-                </div>
-                <div class="posts">
-                    <div class="postimg">
-                        <img src="https://images.unsplash.com/photo-1611522377978-a2f38e639a41?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1001&q=80"
-                            alt="Image error">
-                    </div>
-                </div>
+                <%})%>
             </div>
         </div>
     </div>

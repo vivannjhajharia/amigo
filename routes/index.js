@@ -5,6 +5,7 @@ var userinfo = require('./users');
 var passport = require('passport');
 var passportLocal = require('passport-local');
 var multer = require('multer');
+var postinfo = require('./posts');
 
 passport.use(new passportLocal(userinfo.authenticate()));
 
@@ -13,32 +14,58 @@ var storage = multer.diskStorage({
     cb(null, './public/images/uploads')
   },
   filename: function (req, file, cb) {
-    var date = new Date();
-    var fileName = date+file.originalname;
+    var fileName = file.originalname;
     cb(null, fileName)
   }
 })
  
 var upload = multer({ storage: storage })
 
-// router.post('/uploadpic', upload.single('dp'), function(req, res) {
-//   let address = '/images/uploads/' + req.file.filename;
-//   userinfo.findOne({
-//     username: req.session.passport.user
-//   })
-//   .then(function(userfound) {
-//     // res.send(userfound)
-//     userfound.dp = address;
-//     userfound.save();
-//   })
-//   .then(function() {
-//     res.redirect('/profile')
-//     // res.send(founduser)
-//   })
-// });
+var storage2 = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, './public/images')
+  },
+  filename: function (req, file, cb) {
+    var fileName = file.originalname;
+    cb(null, fileName)
+  }
+})
+ 
+var upload2 = multer({ storage: storage2 })
 
 router.post('/uploadpic', upload.single('dp'), function(req, res) {
-  res.send('hi')
+  let address = '/images/uploads/' + req.file.filename;
+  userinfo.findOne({
+    username: req.session.passport.user
+  })
+  .then(function(userfound) {
+    userfound.dp = address;
+    userfound.save();
+  })
+  .then(function() {
+    res.redirect('/profile')
+  })
+});
+
+router.post('/createpost', upload2.single('image'), function(req, res) {
+  userinfo.findOne({
+    username: req.session.passport.user
+  })
+  .then(function(founduser) {
+    postinfo.create({
+      image: req.file.filename,
+      caption: req.body.caption,
+      user: founduser
+    })
+    .then(function(createdpost) {
+      founduser.posts.push(createdpost);
+      founduser.save();
+      console.log(createdpost)
+    })
+    .then(function(a) {
+      res.redirect('/profile')
+    })
+  })
 });
 
 /* GET home page. */
@@ -55,18 +82,25 @@ router.get('/login', function(req, res) {
 });
 
 router.get('/timeline', isLoggedIn, function(req, res) {
-  res.render('timeline');
+  postinfo.find().populate('socialmedia')
+  .exec(function(e, allposts) {
+    console.log(allposts)
+    res.render('timeline', {allposts})
+  });
 });
 
 router.get('/profile', isLoggedIn, function(req, res) {
-  userinfo.findOne({username: req.session.passport.user})
-  .then(function(founduser){
-    res.render('profile', {founduser});
-  })
+  userinfo.findOne({username: req.session.passport.user}).populate('posts')
+  .exec(function(e, founduser) {
+    res.render('profile', {founduser})
+  });
 });
 
 router.get('/postnow', isLoggedIn, function(req, res) {
-  res.render('postnow');
+  userinfo.findOne({username: req.session.passport.user})
+  .then(function(founduser) {
+    res.render('postnow', {founduser});
+  })
 });
 
 router.get('/editprofile', isLoggedIn, function(req, res) {
@@ -77,11 +111,17 @@ router.get('/editprofile', isLoggedIn, function(req, res) {
 });
 
 router.get('/search', isLoggedIn, function(req, res) {
-  res.render('search');
+  userinfo.findOne({username: req.session.passport.user})
+  .then(function(founduser) {
+    res.render('search', {founduser});
+  })
 });
 
 router.get('/searchprofile', isLoggedIn, function(req, res) {
-  res.render('searchprofile');
+  userinfo.findOne({username: req.session.passport.user})
+  .then(function(founduser) {
+    res.render('searchprofile', {founduser});
+  })
 });
 
 router.post('/register', function(req, res) {

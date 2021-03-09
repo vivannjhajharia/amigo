@@ -36,18 +36,18 @@
             </div>
             <a href="/profile">
                 <div id="dp">
-                    <img src="https://freepikpsd.com/wp-content/uploads/2019/10/default-profile-image-png-1-Transparent-Images.png"
+                    <img src="<%=founduser.dp%>"
                         alt="Image error">
                 </div>
             </a>
         </nav>
         <div id="form">
             <h1>Post Now</h1>
-            <form method="POST" action="">
+            <form method="POST" action="/createpost" enctype="multipart/form-data">
                 <label for="file">Choose Image</label>
-                <input type="file" id="file">
+                <input type="file" id="file" name="image">
                 <br>
-                <textarea placeholder="Enter caption"></textarea>
+                <textarea placeholder="Enter caption" name="caption"></textarea>
                 <br>
                 <input type="submit" value="POST">
             </form>
