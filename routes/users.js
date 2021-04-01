@@ -1,10 +1,11 @@
 let mongoose = require('mongoose');
 let plm = require('passport-local-mongoose');
+let url = process.env.MONGO_URI || 'mongodb+srv://Vivann:vj241005@cluster0.vxpux.mongodb.net/Amigo?retryWrites=true&w=majority'
 
-mongoose.connect('mongodb://localhost/Amigo')
-.then(function(){
-  console.log('Database connected');
-});
+mongoose.connect(url, {useNewUrlParser: true, useUnifiedTopology: true})
+  .then(function () {
+    console.log('Database connected');
+  });
 
 let UserSchema = mongoose.Schema({
   username: String,
@@ -15,13 +16,17 @@ let UserSchema = mongoose.Schema({
     ref: 'posts'
   }],
   bio: {
-    type: String, default: ''
+    type: String,
+    default: ''
   },
   dp: {
-    type: String, default: 'https://freepikpsd.com/wp-content/uploads/2019/10/default-profile-image-png-1-Transparent-Images.png'
-  }
+    type: String,
+    default: 'https://freepikpsd.com/wp-content/uploads/2019/10/default-profile-image-png-1-Transparent-Images.png'
+  },
+  resetToken: String,
+  resestTime: String
 });
 
 UserSchema.plugin(plm);
 
-module.exports = mongoose.model('SocialMedia', UserSchema);
+module.exports = mongoose.model('user', UserSchema);

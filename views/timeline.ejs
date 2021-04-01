@@ -34,7 +34,7 @@
             </div>
             <a href="/profile">
                 <div id="dp">
-                    <img src=""
+                    <img src="<%=founduser.dp%>"
                         alt="Image error">
                 </div>
             </a>
@@ -44,7 +44,7 @@
                 <div class="posts">
                     <div class="postuser">
                         <div class="userimg">
-                            <img src=<%="/images/uploads/"+post.user.dp%>
+                            <img src="<%=post.user.dp%>"
                                 alt="Image error">
                         </div>
                         <span><%=post.user.username%></span>
@@ -56,7 +56,12 @@
                     <div class="postcap">
                         <p><%=post.caption%></p>
                         <div class="details">
-                            <span><i class="ri-heart-3-line"></i></span>
+                            <span><%=post.likes.length%> Likes</span>
+                            <span>
+                                <a href=<%="likes/" + post._id %>>
+                                    <i class="ri-heart-3-line"></i>
+                                </a>
+                            </span>
                         </div>
                     </div>
                 </div>

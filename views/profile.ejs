@@ -36,7 +36,11 @@
             </div>
             <div id="dp">
                 <div id="dpinner">
-                    <img src="<%=founduser.dp%>" alt="Image error">
+                    <%if(loggedInUser) {%>
+                        <img src="<%=loggedInUser.dp%>" alt="Image error">
+                    <%} else {%>
+                        <img src="<%=founduser.dp%>" alt="Image error">
+                    <%}%>
                 </div>
             </div>
         </nav>
@@ -46,15 +50,19 @@
             <br>
             <h5><%=founduser.bio%></h5>
             <br>
-            <a href="/postnow">
-                <button id="one" class="btn">Post Now</button>
-            </a>
-            <a href="/editprofile">
-                <button id="two" class="btn">Edit Profile</button>
-            </a>
-            <a href="/logout">
-                <button id="three" class="btn">Log Out</button>
-            </a>
+            <%if(editable) {%>
+                <div>
+                    <a href="/postnow">
+                        <button id="one" class="btn">Post Now</button>
+                    </a>
+                    <a href="/editprofile">
+                        <button id="two" class="btn">Edit Profile</button>
+                    </a>
+                    <a href="/logout">
+                        <button id="three" class="btn">Log Out</button>
+                    </a>
+                </div>
+            <%}%>
             <h1>Posts</h1>
             <div id="postcontainer">
                 <%founduser.posts.reverse().forEach(function(post) {%>

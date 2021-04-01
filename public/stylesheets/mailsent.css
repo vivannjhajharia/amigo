@@ -1,0 +1,88 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito', sans-serif;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    background-color: #f3f3f3;
+}
+
+#background {
+    height: 100%;
+    width: 100%;
+    background-image: url(/images/joanna-kosinska-mjC9apK53a8-unsplash.jpg);
+    background-size: cover;
+}
+
+nav {
+    width: 100%;
+    height: 12%;
+    display: flex;
+    padding: 0px 50px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#logo {
+    font-family: 'Lobster', cursive;
+    font-size: 35px;
+    color: rgba(24, 24, 24, 0.808);
+}
+
+a {
+    text-decoration: none;
+    color: rgba(24, 24, 24, 0.808);
+}
+
+h1 {
+    text-align: center;
+    width: 100%;
+    color: rgba(24, 24, 24, 0.808);
+    font-weight: 700;
+    font-size: 40px;
+    font-family: 'Montserrat';
+    letter-spacing: 10px;
+    position: absolute;
+    top: 48%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: a 3s ease-in alternate;
+    text-transform: uppercase;
+}
+
+@keyframes a {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+button {
+    padding: 12px 25px;
+    background-color: transparent;
+    border: solid 2px rgba(24, 24, 24, 0.808);
+    border-radius: 5px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    font-family: 'Montserrat';
+    position: absolute;
+    top: 58%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+button:hover {
+    background-color: rgba(24, 24, 24, 0.808);
+    color: #EFF6FB;
+    border: none;
+    font-weight: 600;
+    border: solid 2px rgba(24, 24, 24, 0.808);
+}

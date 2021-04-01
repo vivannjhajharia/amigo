@@ -66,3 +66,17 @@ body {
 .nav a #loginheading {
     color: #6C321B;
 }
+
+#alert {
+    background-color: rgba(223, 222, 222, 0.623);
+    backdrop-filter: blur(5px);
+    height: auto;
+    width: auto;
+    text-align: center;
+    padding: 10px;
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    transform: translate(-50%,0);
+    border-radius: 5px;
+}

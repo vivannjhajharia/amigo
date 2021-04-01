@@ -42,29 +42,19 @@
         </nav>
         <div id="searchbox">
             <form action="">
-                <input type="text" placeholder="Search User">
+                <input type="text" placeholder="Search User" value="<%=typedvalue%>">
                 <button><span id="one"><i class="ri-search-2-line"></i></span></button>
             </form>
         </div>
         <div id="results">
-            <div class="searched">
-                <div class="dp2">
-                    <img src="https://freepikpsd.com/wp-content/uploads/2019/10/default-profile-image-png-1-Transparent-Images.png" alt="Image error">
+            <%searcheduser.forEach(function(a) {%>
+                <div class="searched">
+                    <div class="dp2">
+                        <img src="<%=a.dp%>" alt="Image error">
+                    </div>
+                    <a href=<%="/profile/" + a.username%>><%=a.username%></a>
                 </div>
-                <a href="">Username</a>
-            </div>
-            <div class="searched">
-                <div class="dp2">
-                    <img src="https://freepikpsd.com/wp-content/uploads/2019/10/default-profile-image-png-1-Transparent-Images.png" alt="Image error">
-                </div>
-                <a href="">Username</a>
-            </div>
-            <div class="searched">
-                <div class="dp2">
-                    <img src="https://freepikpsd.com/wp-content/uploads/2019/10/default-profile-image-png-1-Transparent-Images.png" alt="Image error">
-                </div>
-                <a href="">Username</a>
-            </div>
+            <%})%>
         </div>
     </div>
 </body>

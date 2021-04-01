@@ -22,6 +22,13 @@
         <h1>Amigo</h1>
       </a>
     </div>
+    <%if(typeof errors!= 'undefined') {%>
+    <div id="alert">
+      <%errors.forEach(function(e) {%>
+      <h6><%=e.msg%></h6>
+      <%})%>
+    </div>
+    <%}%>
     <div id="form">
       <form method="POST" action="/register">
         <div class="form-group">

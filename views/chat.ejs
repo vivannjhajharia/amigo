@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="/stylesheets/timeline.css">
+    <link rel="stylesheet" href="/stylesheets/chat.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="/images/Free_Sample_By_Wix-removebg-preview.png">
+</head>
+
+<body>
+    <div id="background">
+        <nav>
+            <a href="/timeline">
+                <div id="logo">Amigo</div>
+            </a>
+            <div id="links">
+                <a href="/timeline">
+                    <span><i class="ri-home-line"></i></span>
+                </a>
+                <a href="/postnow">
+                    <span><i class="ri-add-circle-line"></i></span>
+                </a>
+                <a href="/search">
+                    <span><i class="ri-search-line"></i></span>
+                </a>
+                <a href="/chat">
+                    <span><i class="ri-chat-1-fill"></i></span>
+                </a>
+            </div>
+            <a href="/profile">
+                <div id="dp">
+                    <img src="<%=founduser.dp%>" alt="Image error">
+                </div>
+            </a>
+        </nav>
+        <div class="container">
+            <h3>Live Chat</h3>
+            <div class="chatsurface">
+                <div class="msgfield">
+
+                </div>
+                <textarea name="msgtext" id="msg"></textarea>
+                <button id="btn" class="btn btn-block btn-primary mt-3">Send Message</button>
+
+                <div class="usr"><%=founduser.username%></div>
+            </div>
+        </div>
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        const socket = io();
+        var btn = document.querySelector('#btn');
+        var user = document.querySelector('.usr');
+        var textarea = document.querySelector('textarea');
+        var msgfield = document.querySelector('.msgfield')
+        btn.addEventListener('click', function() {
+            console.log('click')
+            socket.emit('chat', {
+                sender: user.textContent,
+                message: textarea.value
+            })
+            textarea.value = ''
+        })
+        socket.on('chat2', function(msg2) {
+            msgfield.innerHTML += `<div class="msg"><span id="one" class="text-primary">${msg2.sender}:</span>${msg2.message}</div>`
+        })
+    </script>
+</body>
+
+</html>

@@ -10,6 +10,8 @@ var userinfo = require('./routes/users');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
+var socketIO = require('socket.io');
+
 var app = express();
 
 app.use(expressSession({
@@ -25,6 +27,17 @@ passport.deserializeUser(userinfo.deserializeUser());
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
+
+var io = socketIO();
+app.io = io;
+
+io.on('connection', function(socketuser) {
+  // console.log('Connected')
+  // console.log(socketuser.id)
+  socketuser.on('chat', function(msg) {
+    io.emit('chat2', msg)
+  })
+})
 
 app.use(logger('dev'));
 app.use(express.json());
